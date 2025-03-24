@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devika's Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body background="back1.jpeg">
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+}
+
+/* Header and Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(60, 60, 60); /* Optional: Adds background color to make it stand out */
+    z-index: 1000; /* Ensures the header stays on top of other content */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    height: 50px; /* You can adjust this value as per your logo size */
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    margin: 0 15px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #ffffff; /* You can change this color */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    color: #007bff; /* Change the hover color */
+}
+
+/* Home Section Styling */
+#home {
+    background: url('back1.jpeg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+    color: #fff;
+    height: 100vh; /* Full-page height */
+    box-sizing: border-box;
+}
+
+#home .details {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+}
+
+#home .details h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#home .details h1 span {
+    color: #4CAF50;
+}
+
+#home .details p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+#home .details .btn-resume {
+    background: #4CAF50;
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    display: inline-block;
+}
+
+#home .details .btn-resume:hover {
+    background: #333;
+}
+
+#home .images {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+}
+
+#home .images .photo {
+    max-width: 50%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* About Section */
+#about {
+    background: url('back1.jpeg') no-repeat center center/cover;
+    padding: 60px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+#about .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#about .image2 {
+    max-width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#about p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    text-align: justify;
+}
+
+/* Skills Section */
+#skills {
+    background: url('back1.jpeg') no-repeat center center/cover;
+    padding: 60px 20px;
+}
+
+#skills h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 40px;
+}
+
+.skills {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill {
+    margin: 15px 0;
+}
+
+.skill label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.skill progress {
+    width: 100%;
+    height: 20px;
+    appearance: none;
+}
+
+.skill progress::-webkit-progress-bar {
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.skill progress::-webkit-progress-value {
+    background: #4CAF50;
+    border-radius: 5px;
+}
+
+#projects {
+        background: url('back1.jpeg') no-repeat center center/cover;
+        padding: 60px 20px;
+        color: #fff;
+        text-align: center;
+    }
+
+    #projects h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: #4CAF50;
+    }
+
+    .project-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 500px;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: left;
+    }
+
+    .project-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #4CAF50;
+    }
+
+    .project-card p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+
+    .project-link {
+        text-decoration: none;
+        color: #fff;
+        background-color: #4CAF50;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        display: inline-block;
+        transition: background 0.3s ease;
+    }
+
+    .project-link:hover {
+        background-color: #333;
+    }
+
+/* Contact Section */
+#contact {
+    background: url('back1.jpeg') no-repeat center center/cover;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+#contact form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contact label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#contact button {
+    background: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#contact button:hover {
+    background: #333;
+}
+
+#social {
+    margin-top: 20px;
+}
+
+#social a {
+    color: #4CAF50;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+#social a:hover {
+    color: #fff;
+}
+
+/* Hire Me Section */
+#hire {
+    background: url('back1.jpeg') no-repeat center center/cover;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#hire h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+#hire ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#hire ul li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Footer */
+footer {
+    background: #282c34;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .social-icon {
+    color: #4CAF50;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer .social-icon:hover {
+    color: #fff;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+    </style>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <img src="logo.jpg" class="logo" alt="Logo">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#hire">Hire Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="details">
+            <h1>Hi, I am <span>Devika</span></h1>
+            <p>This is my portfolio website to showcase my<br> details and work experience in website development.</p>
+            <a href="devikaresume.pdf" class="btn-resume" download>Download Resume</a>
+        </div>
+        <div class="images">
+            <img src="devika.jpg" class="photo" alt="Devika">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="devika.jpg" class="image2" alt="Devika">
+            <p>Hello, I am Devika, a second-year BSc Computer Science student at Sridevi Arts and Science College with a strong foundation in web development. Passionate about technology, I have gained proficiency in HTML and CSS, and I am continuously expanding my skills to stay ahead in the ever-evolving IT industry. With a keen interest in problem-solving and creating user-friendly web experiences, I aspire to contribute to the field of Information Technology.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills">
+            <div class="skill">
+                <label>HTML</label>
+                <progress value="90" max="100"></progress>
+            </div>
+            <div class="skill">
+                <label>CSS</label>
+                <progress value="50" max="100"></progress>
+            </div>
+            <div class="skill">
+                <label>Python</label>
+                <progress value="70" max="100"></progress>
+            </div>
+            <div class="skill">
+                <label>Java</label>
+                <progress value="80" max="100"></progress>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+<section id="projects">
+    <h2>Project</h2>
+    <div class="project-card">
+        <h3>To-Do List App</h3>
+        <p>A simple and intuitive app to manage your daily tasks effectively. Built with HTML, CSS, and JavaScript.</p>
+        <a href="project.html" class="project-link" target="_blank">View Project</a>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="#">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <br>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div id="social">
+            <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
+
+    <!-- Hire Me Section -->
+    <section id="hire">
+        <h2>Hire Me</h2>
+        <p>If you're looking for a passionate web developer, I am always open to taking up new challenges and working on creative projects!</p>
+        <h3>Skills I Offer</h3>
+        <ul>
+            <li>Web Development (HTML, CSS)</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>App Development (Flutter)</li>
+        </ul>
+        <p>I'd like to collaborate with companies to give my new ideas for web development. Seeking opportunities...</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="https://github.com" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.whatsapp.com" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.twitter.com/" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>Contact | Email | Location</p>
+            <p>7708962685 | sdevikab23128bsccs@gmail.com | SDC College, Krishnapuram, Ponneri-601204</p>
+            <p>Made with <span>&#9829;</span> by Me</p>
+        </div>
+    </footer>
+</body>
+</html>
